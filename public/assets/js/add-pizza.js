@@ -51,7 +51,7 @@ const handlePizzaSubmit = event => {
   }
 
   const formData = { pizzaName, createdBy, size, toppings };
-  
+
   fetch('/api/pizzas', {
     method: 'POST',
     headers: {
@@ -60,16 +60,15 @@ const handlePizzaSubmit = event => {
     },
     body: JSON.stringify(formData)
   })
-  .then(response => response.json())
-  .then(postResponse => {
-    alert('Pizza created sucessfully!');
-    console.log(postResponse);
-  })
-  .catch(err => {
-    console.log(err);
-    saveRecord(formData);
-  });
-
+    .then(response => response.json())
+    .then(postResponse => {
+      console.log(postResponse);
+    })
+    .catch(err => {
+      console.log(err);
+      saveRecord(formData);
+      // DO INDEXED DB STUFF HERE
+    });
 };
 
 $pizzaForm.addEventListener('submit', handlePizzaSubmit);
