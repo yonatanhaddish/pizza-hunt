@@ -7,6 +7,8 @@ const $toppingsList = document.querySelector('#toppings-list');
 const $commentSection = document.querySelector('#comment-section');
 const $newCommentForm = document.querySelector('#new-comment-form');
 
+const fetch = require("node-fetch"); 
+
 let pizzaId;
 
 function getPizza() {

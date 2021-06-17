@@ -1,4 +1,5 @@
 const $pizzaList = document.querySelector('#pizza-list');
+const fetch= require('node-fetch');
 
 const getPizzaList = () => {
   fetch('/api/pizzas')
